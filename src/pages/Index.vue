@@ -7,21 +7,33 @@
         </q-card-section>
 
         <q-card-section v-if="this.cantor === '100' && this.verificaCpf !== 0">
+          <q-avatar>
+            <img src="../statics/rita.png">
+          </q-avatar>
           Parabéns você votou para a Rita Lee na premiação musical
         </q-card-section>
         <q-card-section v-if="this.cantor === '101' && this.verificaCpf !== 0">
-          Parabéns você votou para o Cartola na premiação musical
+          <q-avatar>
+            <img src="../statics/cartola.png">
+          </q-avatar>
+           Parabéns você votou para o Cartola na premiação musical
         </q-card-section>
         <q-card-section v-if="this.cantor === '102' && this.verificaCpf !== 0">
+          <q-avatar>
+            <img src="../statics/ney.png">
+          </q-avatar>
           Parabéns você votou para o Ney Matogrosso na premiação musical
         </q-card-section>
         <q-card-section v-if="this.cantor === '103' && this.verificaCpf !== 0">
-          Desculpe :( Infelizmente não será possivel votar nesse artista. Aperte em OK e escolha outro.
+          <q-avatar color="red" text-color="white" icon="sentiment_very_dissatisfied" />
+          Desculpe Infelizmente não será possivel votar nesse artista. Aperte em OK e escolha outro.
         </q-card-section>
         <q-card-section v-if="this.cantor !== '103' && this.cantor !== '102' && this.cantor !== '101' && this.cantor !== '100' && this.verificaCpf !== 0">
-          Desculpe :( Infelizmente não foi escolhido um numero válido. Seu voto foi considerado nulo.
+          <q-avatar color="red" text-color="white" icon="sentiment_very_dissatisfied" />
+          Infelizmente não foi escolhido um numero válido. Seu voto foi considerado nulo.
         </q-card-section>
         <q-card-section v-if="this.verificaCpf === 0">
+          <q-avatar color="red" text-color="white" icon="sentiment_very_dissatisfied" />
           Esse CPF já foi utilizado.
         </q-card-section>
         <q-card-actions align="right">
@@ -29,12 +41,12 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-    <section class="column">
+    <section class="column borda">
       <div class="textoCorpo">
         <span>Escolha seu artista favorito e vote.</span>
       </div>
       <div class="fotos row">
-        <div elevated class="artista column">
+        <div class="artista column">
           <div class="nome">
             <span>rita lee</span>
           </div>
@@ -43,6 +55,7 @@
           </div>
           <div class="row numVotos">
             <span>votos: {{this.numVotosRita}}</span>
+             <q-separator style="width:2px;" vertical inset />
             <span>{{this.percentRita}} %</span>
           </div>
           <div class="numeroCandidato">
@@ -58,6 +71,7 @@
           </div>
           <div class="row numVotos">
             <span>votos: {{this.numVotosCartola}}</span>
+            <q-separator style="width:2px;" vertical inset />
             <span>{{this.percentCartola}} %</span>
           </div>
           <div class="numeroCandidato">
@@ -73,6 +87,7 @@
           </div>
           <div class="row numVotos">
             <span>votos: {{this.numVotosNey}}</span>
+            <q-separator style="width:2px;" vertical inset />
             <span>{{this.percentNey}} %</span>
           </div>
           <div class="numeroCandidato">
@@ -88,6 +103,7 @@
           </div>
           <div class="row numVotos">
             <span>votos: {{this.numVotosAnita}}</span>
+            <q-separator style="width:2px;" vertical inset />
             <span>{{this.percentAnita}} %</span>
           </div>
           <div class="numeroCandidato">
@@ -116,6 +132,8 @@
 </template>
 
 <style>
+.borda{
+}
 .botao{
   background: #ff4700;
   color: #FFFFFF;
@@ -124,6 +142,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
+  margin-right: 60px;
 }
 .fotos{
   justify-content: space-between;
@@ -134,6 +153,11 @@
 }
 .artista{
   margin-right: 60px;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius:20px 20px 20px 20px;
 }
 .numeroCandidato{
   width: 150px;
@@ -147,7 +171,7 @@
   font-weight: bold;
   font-size: 16px;
   font-family: Montserrat;
-  color: #AAAAAA
+  color: #AAAAAA;
 }
 .nome{
   width: 150px;
